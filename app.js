@@ -9,6 +9,7 @@ var second = [];
 var hcore=[];
 var hore = []
 var l = 0; 
+var n=0;
 
 var randno = Math.floor(Math.random()*20)+1;
 list.push(randno);
@@ -94,12 +95,16 @@ var sec=0,min=0;
 
 function handleClick()
 {   
+    
     l++;
     if(l==1)
     {
+        var tom1 = new Audio("sounds/Cut/1.mp3");
+        tom1.play();
 var seconds = 4
     
     var countdown = setInterval(function() {
+
         seconds--;
         if(seconds>0)
         {
@@ -123,9 +128,16 @@ var seconds = 4
                container.style.fontSize='22px'
             };
             seconds =0;
-         
+            n++;
 
 
+        }
+
+          
+        if(n==1)
+        {
+            var tom2 = new Audio("sounds/Merged/2.mp3");
+            tom2.play();
         }
 
         }, 1000);
@@ -150,9 +162,11 @@ var seconds = 4
         {
             clearInterval(timer);
         }
-
+     
 
         },1000);
+    
+        
 
 
     }
@@ -163,12 +177,55 @@ var userPattern = [];
 
 function whenClicked()
 {   
+
     if(Number(document.getElementById(this.id).innerText<=20))
-    {
-        document.getElementById(this.id).style.backgroundColor="#ffb6b6";
+    {   
+        var y = Number(document.getElementById(this.id).innerText);
+        if(y<5)
+        {   
+            var z =5-y;
+            document.getElementById(this.id).style.backgroundColor= "rgb(255,255,"+51*z+")";
+        }
+        else if(y>=5&&y<11)
+        {
+             if(y==5)
+             {
+                document.getElementById(this.id).style.backgroundColor= "rgb(255,215,0)";
+             }
+             if(y==6)
+             {
+                document.getElementById(this.id).style.backgroundColor= "rgb(255,165,0)";
+             }
+             if(y==7)
+             {
+                document.getElementById(this.id).style.backgroundColor= "rgb(255,140,0)";
+             }
+             if(y==8)
+             {
+                document.getElementById(this.id).style.backgroundColor= "rgb(255,127,80)";
+             }
+             if(y==9)
+             {
+                document.getElementById(this.id).style.backgroundColor= "rgb(255,99,71)";
+             }
+             if(y==10)
+             {
+                document.getElementById(this.id).style.backgroundColor= "rgb(255,69,0)";
+             }
+        }
+        else if(y>=11&&y<=20)
+        {   
+            var m=   256 - 16*(y-10);
+
+            document.getElementById(this.id).style.backgroundColor= "rgb("+m+",0,0)";
+        }
+      
+        document.getElementById(this.id).classList.add("grid");
+ 
+        
         userPattern.push(Number(document.getElementById(this.id).innerText));
         var no = Number(document.getElementById(this.id).innerText) + 20;
-        document.getElementById(this.id).innerHTML="<h1>" + no +"</h1>";
+        document.getElementById(this.id).innerHTML="<h2>" + no +"</h2>";
         
 
 
@@ -178,6 +235,8 @@ function whenClicked()
            {
             
             document.getElementById("container").innerHTML="<h4>GAME OVER<br>Restart!</h4>";
+            var tom3  = new Audio("sounds/Cut/2.mp3");
+            tom3.play();
             var activeButton =  document.querySelector("body");
             activeButton.classList.add("red");
             setTimeout(function() {
@@ -407,6 +466,8 @@ for(var j =0;j<40;j++)
         gameSequence.push(j+1);
     
 }
+
+
 
 
 
