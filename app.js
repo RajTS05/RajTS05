@@ -120,7 +120,7 @@ document.getElementById("m").addEventListener("click",function(){
         ee++;
         hh++;
         document.getElementById("e").style.opacity="0.3";
-        document.getElementById("h").sstyle.opacity="0.3";
+        document.getElementById("h").style.opacity="0.3";
         level=2;
         hscore=[];
         hore=[];
