@@ -115,7 +115,7 @@ document.getElementById("e").addEventListener("click",function(){
 document.getElementById("m").addEventListener("click",function(){
 
 
-    if(m==0)
+    if(mm==0)
     {
         ee++;
         hh++;
