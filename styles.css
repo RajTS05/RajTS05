@@ -318,6 +318,7 @@ h6
         
         justify-content: center;
         align-content: center;
+        margin-bottom: 60px;
     }
     
     aside
@@ -462,6 +463,10 @@ h6
     h5
     {
         color: white;
+    }
+    h6
+    {
+        font-size: 60px;
     }
 
 }
