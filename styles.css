@@ -57,26 +57,46 @@ aside
     font-size: 25px;
     color: #d7385e;
     background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgb(0, 0, 0));
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    transition:0.04s ease-in-out;
+
 }
+
+.border
+{
+    border: 1px black solid;
+}
+
+
+
+
+
+
+
+
+
 
 .gridRows:hover
 {
   opacity: 0.7;
   border: tomato 1px solid;
+  transition: translate 4s;
 }
 
 main #container
 {   grid-column: 1/13;
     border: 4px solid white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: minmax(80px,auto);
+    position: relative;
     padding: 0;
     border-radius: 10px;
     text-align: center;
+
     cursor: pointer;
     font-size: 50px;
     background-image: radial-gradient( circle farthest-corner at 50.3% 44.5%,  rgba(116,147,179,1) 0%, rgba(62,83,104,1) 100.2% );
+    
 }
 h1
 {
@@ -430,11 +450,12 @@ h6
     .topright
     {
         grid-row: 3/4;
-        margin-top: 0 ;
+        margin-top: 20px;
         grid-column: 5/13;
-        margin-left: 26px;
+        margin-left: 23px;
         font-size: 10px;
-        margin-bottom: 30px;
+      
+    
         
         
     }
@@ -468,5 +489,6 @@ h6
     {
         font-size: 60px;
     }
+
 
 }

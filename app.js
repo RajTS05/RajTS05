@@ -52,7 +52,7 @@ var ee=0,mm=0,hh=0;
    
 document.getElementById("e").addEventListener("click",function(){
     if(ee==0)
-    {
+    {   ee++;
         mm++;
         hh++;
         hscore=[];
@@ -116,7 +116,7 @@ document.getElementById("m").addEventListener("click",function(){
 
 
     if(mm==0)
-    {
+    {   mm++;
         ee++;
         hh++;
         document.getElementById("e").style.opacity="0.3";
@@ -185,7 +185,7 @@ document.getElementById("h").addEventListener("click",function(){
 
 
     if(hh==0)
-    {
+    {   hh++;
         mm++;
         ee++
         level=3;
@@ -301,23 +301,263 @@ function handleClick()
                         document.getElementById("container").innerHTML = "<h3>"+seconds+"</h3>";
                       }
             
-                      if (seconds ==0)
+            if (seconds ==0)
                       {   
                         sec=0; min=0;
                         document.getElementById("time").style.visibility="visible";
                         document.getElementById("container").innerHTML = "";
                         clearInterval(countdown);
                         const container = document.getElementById("container");
+                     
+        
                         for(var i=0;i<20;i++)
                         {
                            let cell=document.createElement("div");
-                           container.appendChild(cell).className="gridRows " +i;
-                           cell.innerHTML = "<h2>" + list[i] + "</h2>";
-                           cell.id="grows" + i;
-                           document.getElementById("grows"+i).addEventListener("click",whenClicked);
+                           if(i<5)
+                           {
+                            container.appendChild(cell).className="gridRows " +i;
+                            cell.innerHTML = "<h2>" + list[i] + "</h2>";
+                            cell.id="grows" + i;
+                            document.getElementById("grows"+i).addEventListener("click",whenClicked);
+                            var l = 20*i;
+                            cell.style.left=l+"%";
+                            cell.style.top="0";
+                            cell.style.height="23%";
+              
+                
+                           }
+                           if(i>=5&&i<10)
+                           {
+                            container.appendChild(cell).className="gridRows " +i;
+                            cell.innerHTML = "<h2>" + list[i] + "</h2>";
+                            cell.id="grows" + i;
+                            document.getElementById("grows"+i).addEventListener("click",whenClicked);
+                            var l = 20*(i-5);
+                            cell.style.left=l+"%";
+                            cell.style.top="25%";
+                            cell.style.height="25%";
+                           }
+                           if(i>=10&&i<=14)
+                           {
+                            container.appendChild(cell).className="gridRows " +i;
+                            cell.innerHTML = "<h2>" + list[i] + "</h2>";
+                            cell.id="grows" + i;
+                            document.getElementById("grows"+i).addEventListener("click",whenClicked);
+                            var l = 20*(i-10);
+                            cell.style.left=l+"%";
+                            cell.style.top="50%";
+                            cell.style.height="25%";
+                           }
+                           if(i>=15&&i<=19)
+                           {
+                            container.appendChild(cell).className="gridRows " +i;
+                         
+                            cell.innerHTML = "<h2>" + list[i] + "</h2>";
+                            cell.id="grows" + i;
+                            document.getElementById("grows"+i).addEventListener("click",whenClicked);
+                            var l = 20*(i-15);
+                            cell.style.left=l+"%";
+                            cell.style.top="75%";
+                            cell.style.height="25%";
+                         
+                 
+                           }
+                          
                            container.style.padding='20px';
-                           container.style.fontSize='22px'
-                        };
+                           container.style.fontSize='22px';
+                      
+
+           
+                          
+
+             
+                            
+                           
+                          
+                    
+                           
+                        }
+                        
+                        var pos1= [0,1,2,3,4];      
+                        var grid = document.getElementsByClassName('gridRows');
+                        grid[0].style.backgroundColor="#838B8B";
+                           
+                        grid[2].style.backgroundColor="#2F4F4F";
+     
+                        grid[4].style.backgroundColor="#388E8E";      
+                        
+                               
+                        grid[0].classList.add("border");
+                               
+                        grid[2].classList.add("border");
+                               
+                        grid[4].classList.add("border");
+
+                        grid[10].style.backgroundColor="#838B8B";
+                                 
+                        grid[12].style.backgroundColor="#2F4F4F";
+           
+                        grid[14].style.backgroundColor="#388E8E";         
+                               
+                        grid[10].classList.add("border"); 
+                               
+                        grid[12].classList.add("border");
+                               
+                         grid[14].classList.add("border");
+                         grid[5].style.backgroundColor="#6959CD";
+                              
+                         grid[7].style.backgroundColor="#5D478B";
+              
+                         grid[9].style.backgroundColor="#380474";  
+                         
+                         grid[5].classList.add("border");
+                           
+                         grid[7].classList.add("border");
+                           
+                         grid[9].classList.add("border");
+
+                         grid[15].style.backgroundColor="#6959CD";
+                               
+                         grid[17].style.backgroundColor="#5D478B";
+              
+                         grid[19].style.backgroundColor="#380474";          
+                         
+                         grid[15].classList.add("border");
+                             
+                         grid[17].classList.add("border");
+                                
+                         grid[19].classList.add("border");
+
+                        
+                        
+                            setInterval(function(){
+                               
+                            
+                                
+                                for(var u=0;u<4;u++)
+                                {
+                                   var v=(u+1)*20; 
+                                   grid[pos1[u]].style.left=v+"%";
+                             
+                                   
+                                   
+                                }
+                                   grid[pos1[4]].style.left=0;
+                                   var temp = pos1[4];
+                                 for(i=4;i>=0;i--)
+                                 {
+                                    pos1[i]=pos1[i-1];
+                                 }  
+                                 pos1[0]=temp;
+        
+        
+                             },1000)   ;      
+                             
+
+
+                             var pos3= [10,11,12,13,14];      
+                  
+
+                        
+                        
+                             setInterval(function(){
+                           
+      
+
+                                 
+                                 
+                                 for(var u=0;u<4;u++)
+                                 {
+                                    var v=(u+1)*20; 
+                                    grid[pos3[u]].style.left=v+"%";
+                              
+                                    
+                                    
+                                 }
+                                    grid[pos3[4]].style.left=0;
+                                    var temp = pos3[4];
+                                  for(i=4;i>=0;i--)
+                                  {
+                                     pos3[i]=pos3[i-1];
+                                  }  
+                                  pos3[0]=temp;
+         
+         
+                              },1000)   ;      
+
+
+
+                              var pos2= [5,6,7,8,9];   
+
+                              setInterval(function(){
+                               
+                                
+
+                                  
+                                  for(var u=1;u<=4;u++)
+                                  {
+                                  
+                                        var v=(u-1)*20 ;
+                                        grid[pos2[u]].style.left=v+"%";
+                                  
+                                  }
+                                   grid[pos2[0]].style.left="80%";
+                                  
+                                     var temp = pos2[0];
+                                   for(var i=1;i<=4;i++)
+                                   {
+                                      pos2[i-1]=pos2[i];
+                                   }  
+                                   pos2[4]=temp;
+            
+                                   
+          
+          
+                               },1000)   ;      
+
+                               var pos4= [15,16,17,18,19];   
+
+                               setInterval(function(){
+                                  
+                               
+
+                                   
+                                   for(var u=1;u<=4;u++)
+                                   {
+                                   
+                                         var v=(u-1)*20 ;
+                                         grid[pos4[u]].style.left=v+"%";
+                                   
+                                   }
+                                    grid[pos4[0]].style.left="80%";
+                                   
+                                      var temp = pos4[0];
+                                    for(var i=1;i<=4;i++)
+                                    {
+                                       pos4[i-1]=pos4[i];
+                                    }  
+                                    pos4[4]=temp;
+                                
+                                    
+           
+           
+                                },1000)   ;      
+                                            
+
+
+                               
+                  
+
+                        
+                        
+                         
+       
+                       
+
+                      
+            
+                      
+                        
                         seconds =0;
                         n++;
             
@@ -431,6 +671,8 @@ function handleClick()
             
             
                 }
+
+                
                              
             }
 
@@ -526,11 +768,21 @@ function handleClick()
 
 
 
+
+
+
+
+
+
+
+
+
+
 function whenClicked()
 {   
      
    if(level==1)
-   {
+   {  
       if(Number(document.getElementById(this.id).innerText<=20))
         {   
            var y = Number(document.getElementById(this.id).innerText);
